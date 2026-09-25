@@ -32,9 +32,15 @@ npm --version
 
 ## 2. Pick a version
 
-Browse [`release-artifacts/`](release-artifacts) or the table in
-[README.md](README.md#available-versions) for the version you want. Each
-version directory contains a tarball and its checksum file.
+For the newest release, use the top-level convenience copy in this
+repository:
+
+- [`opencircuit-cli-1.0.0.tgz`](opencircuit-cli-1.0.0.tgz)
+- [`opencircuit-cli-1.0.0.tgz.sha256`](opencircuit-cli-1.0.0.tgz.sha256)
+
+For an older release, browse [`release-artifacts/`](release-artifacts) or the
+table in [README.md](README.md#available-versions); each version directory
+contains a tarball and its checksum file.
 
 ## 3. Verify the checksum
 

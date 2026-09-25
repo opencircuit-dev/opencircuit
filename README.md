@@ -32,11 +32,24 @@ Verify the checksum before installing any tarball you download.
 
 <!-- VERSIONS_TABLE_END -->
 
+## Latest release (top-level convenience copy)
+
+The tarball and checksum for the newest version are also mirrored at the
+repository root, so you don't need to browse into `release-artifacts/` to
+grab the current release:
+
+- [`opencircuit-cli-1.0.0.tgz`](opencircuit-cli-1.0.0.tgz)
+- [`opencircuit-cli-1.0.0.tgz.sha256`](opencircuit-cli-1.0.0.tgz.sha256)
+
+These two files are overwritten on every publish and always match the newest
+entry in the table above. Use the versioned copies under `release-artifacts/`
+if you need a specific older release.
+
 ## Install
 
 ```bash
-shasum -a 256 -c release-artifacts/<version>/opencircuit-cli-<version>.tgz.sha256
-npm install --global release-artifacts/<version>/opencircuit-cli-<version>.tgz
+shasum -a 256 -c opencircuit-cli-<version>.tgz.sha256
+npm install --global opencircuit-cli-<version>.tgz
 oc --version
 ```
 
@@ -50,9 +63,10 @@ This repository is a generated mirror. Its contents are produced from the
 repository's `stable-release.yml` GitHub Actions workflow, via
 [`scripts/publish-release-artifacts.sh`](https://github.com/opencircuit-dev/opencircuit-dev/blob/main/scripts/publish-release-artifacts.sh).
 Each stable CLI release automatically copies new release artifacts here,
-verifies each tarball has a matching checksum, and refreshes the versions
-table above. Do not hand-edit `release-artifacts/`; changes are overwritten on
-the next publish.
+mirrors the newest tarball/checksum pair to the repository root, verifies
+each tarball has a matching checksum, and refreshes the versions table above.
+Do not hand-edit `release-artifacts/` or the top-level tarball/checksum;
+changes are overwritten on the next publish.
 
 ## License
 
