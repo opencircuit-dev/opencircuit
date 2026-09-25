@@ -46,11 +46,13 @@ Node.js setup and first commands.
 ## How this repository is updated
 
 This repository is a generated mirror. Its contents are produced from the
-`opencircuit-dev` source repository's `release-artifacts/` output by
-[`scripts/sync-release-artifacts.sh`](scripts/sync-release-artifacts.sh),
-which copies new release artifacts, verifies each tarball has a matching
-checksum, and refreshes the versions table above. Do not hand-edit
-`release-artifacts/`; re-run the sync script instead.
+`opencircuit-dev` source repository's `release-artifacts/` output by that
+repository's `stable-release.yml` GitHub Actions workflow, via
+[`scripts/publish-release-artifacts.sh`](https://github.com/opencircuit-dev/opencircuit-dev/blob/main/scripts/publish-release-artifacts.sh).
+Each stable CLI release automatically copies new release artifacts here,
+verifies each tarball has a matching checksum, and refreshes the versions
+table above. Do not hand-edit `release-artifacts/`; changes are overwritten on
+the next publish.
 
 ## License
 
