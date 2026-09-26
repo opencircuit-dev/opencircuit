@@ -37,8 +37,8 @@ The current bundle and checksum are always published at the repository root:
 
 <!-- LATEST_ARTIFACT_START -->
 
-- [`opencircuit-cli-<version>.tgz`](opencircuit-cli-<version>.tgz)
-- [`opencircuit-cli-<version>.tgz.sha256`](opencircuit-cli-<version>.tgz.sha256)
+- [`opencircuit-cli-1.0.1.tgz`](opencircuit-cli-1.0.1.tgz)
+- [`opencircuit-cli-1.0.1.tgz.sha256`](opencircuit-cli-1.0.1.tgz.sha256)
 
 <!-- LATEST_ARTIFACT_END -->
 
