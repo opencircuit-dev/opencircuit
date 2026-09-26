@@ -30,17 +30,16 @@ node --version
 npm --version
 ```
 
-## 2. Pick a version
+## 2. Download the current release
 
-For the newest release, use the top-level convenience copy in this
-repository:
+<!-- LATEST_ARTIFACT_START -->
 
-- [`opencircuit-cli-1.0.0.tgz`](opencircuit-cli-1.0.0.tgz)
-- [`opencircuit-cli-1.0.0.tgz.sha256`](opencircuit-cli-1.0.0.tgz.sha256)
+For the newest release, download the root-level bundle and checksum:
 
-For an older release, browse [`release-artifacts/`](release-artifacts) or the
-table in [README.md](README.md#available-versions); each version directory
-contains a tarball and its checksum file.
+- [`opencircuit-cli-1.0.1.tgz`](opencircuit-cli-1.0.1.tgz)
+- [`opencircuit-cli-1.0.1.tgz.sha256`](opencircuit-cli-1.0.1.tgz.sha256)
+
+<!-- LATEST_ARTIFACT_END -->
 
 ## 3. Verify the checksum
 
@@ -61,7 +60,7 @@ Do not install a tarball whose checksum does not match.
 ## 4. Install the CLI
 
 ```bash
-npm install --global release-artifacts/<version>/opencircuit-cli-<version>.tgz
+npm install --global ./opencircuit-cli-<version>.tgz
 ```
 
 Confirm the install:

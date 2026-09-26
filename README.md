@@ -14,13 +14,12 @@ New to Open Circuit? Start with **[QUICKSTART.md](QUICKSTART.md)**.
 
 ## What is published here
 
-Each release is a directory under [`release-artifacts/`](release-artifacts)
-containing:
+The current release is published at the repository root:
 
 - `opencircuit-cli-<version>.tgz` — the installable npm package tarball
 - `opencircuit-cli-<version>.tgz.sha256` — its SHA-256 checksum
 
-Verify the checksum before installing any tarball you download.
+Verify the checksum before installing. The root-level pair is refreshed automatically on each publication.
 
 ## Available versions
 
@@ -28,22 +27,20 @@ Verify the checksum before installing any tarball you download.
 
 | Version | Artifact | Checksum |
 | ------- | -------- | -------- |
-| `v1.0.1` | [`release-artifacts/v1.0.1/opencircuit-cli-1.0.1.tgz`](release-artifacts/v1.0.1/opencircuit-cli-1.0.1.tgz) | [`opencircuit-cli-1.0.1.tgz.sha256`](release-artifacts/v1.0.1/opencircuit-cli-1.0.1.tgz.sha256) |
+| `v1.0.1` | [`opencircuit-cli-1.0.1.tgz`](opencircuit-cli-1.0.1.tgz) | [`opencircuit-cli-1.0.1.tgz.sha256`](opencircuit-cli-1.0.1.tgz.sha256) |
 
 <!-- VERSIONS_TABLE_END -->
 
-## Latest release (top-level convenience copy)
+## Latest release
 
-The tarball and checksum for the newest version are also mirrored at the
-repository root, so you don't need to browse into `release-artifacts/` to
-grab the current release:
+The current bundle and checksum are always published at the repository root:
 
-- [`opencircuit-cli-1.0.0.tgz`](opencircuit-cli-1.0.0.tgz)
-- [`opencircuit-cli-1.0.0.tgz.sha256`](opencircuit-cli-1.0.0.tgz.sha256)
+<!-- LATEST_ARTIFACT_START -->
 
-These two files are overwritten on every publish and always match the newest
-entry in the table above. Use the versioned copies under `release-artifacts/`
-if you need a specific older release.
+- [`opencircuit-cli-<version>.tgz`](opencircuit-cli-<version>.tgz)
+- [`opencircuit-cli-<version>.tgz.sha256`](opencircuit-cli-<version>.tgz.sha256)
+
+<!-- LATEST_ARTIFACT_END -->
 
 ## Install
 
@@ -58,15 +55,13 @@ Node.js setup and first commands.
 
 ## How this repository is updated
 
-This repository is a generated mirror. Its contents are produced from the
-`opencircuit-dev` source repository's `release-artifacts/` output by that
-repository's `stable-release.yml` GitHub Actions workflow, via
-[`scripts/publish-release-artifacts.sh`](https://github.com/opencircuit-dev/opencircuit-dev/blob/main/scripts/publish-release-artifacts.sh).
-Each stable CLI release automatically copies new release artifacts here,
-mirrors the newest tarball/checksum pair to the repository root, verifies
-each tarball has a matching checksum, and refreshes the versions table above.
-Do not hand-edit `release-artifacts/` or the top-level tarball/checksum;
-changes are overwritten on the next publish.
+This repository is a generated distribution point. The source repository builds
+and validates the CLI, then publishes only the newest tarball and checksum at
+this repository root. The source-side `release-artifacts/` directory is build
+staging and is not copied into this repository.
+
+Do not hand-edit the root-level tarball or checksum; the next automated publish
+replaces them.
 
 ## License
 
