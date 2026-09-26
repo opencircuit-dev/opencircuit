@@ -28,7 +28,7 @@ Verify the checksum before installing any tarball you download.
 
 | Version | Artifact | Checksum |
 | ------- | -------- | -------- |
-| `v1.0.0` | [`release-artifacts/v1.0.0/opencircuit-cli-1.0.0.tgz`](release-artifacts/v1.0.0/opencircuit-cli-1.0.0.tgz) | [`opencircuit-cli-1.0.0.tgz.sha256`](release-artifacts/v1.0.0/opencircuit-cli-1.0.0.tgz.sha256) |
+| `v1.0.1` | [`release-artifacts/v1.0.1/opencircuit-cli-1.0.1.tgz`](release-artifacts/v1.0.1/opencircuit-cli-1.0.1.tgz) | [`opencircuit-cli-1.0.1.tgz.sha256`](release-artifacts/v1.0.1/opencircuit-cli-1.0.1.tgz.sha256) |
 
 <!-- VERSIONS_TABLE_END -->
 
