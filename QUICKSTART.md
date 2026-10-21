@@ -70,6 +70,33 @@ command -v oc
 oc --version
 ```
 
+<!-- PACKAGED_CONFIGURATION_START -->
+
+## Packaged Configuration
+
+This release includes 6 starter templates:
+
+- `config-anthropic.yaml`
+- `config-byom.yaml`
+- `config-gemini.yaml`
+- `config-meta.yaml`
+- `config-olmo.yaml`
+- `config-openai.yaml`
+
+The CLI installs these templates under `~/.ocircuit/templates/`. Select one
+for `~/.ocircuit/config.yaml`; keep provider credentials in the private
+`~/.ocircuit/.env` file, not in a template. Do not activate multiple provider configs.
+
+```bash
+cp ~/.ocircuit/templates/config-openai.yaml ~/.ocircuit/config.yaml
+chmod 600 ~/.ocircuit/config.yaml
+```
+
+Meta uses `META_MODEL_API_KEY`. For OLMo, set your Ollama server address
+in `config-olmo.yaml`; OLMo sessions are chat-only with tools disabled.
+
+<!-- PACKAGED_CONFIGURATION_END -->
+
 ## 5. First commands
 
 ```bash

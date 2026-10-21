@@ -4,7 +4,7 @@
 
 [![License](https://img.shields.io/badge/license-Apache--2.0-2563eb)](LICENSE)
 
-This repository publishes signed, versioned release tarballs for the Open
+This repository publishes versioned release tarballs with SHA-256 checksums for the Open
 Circuit CLI (`oc`). It does not contain the project's source code. Source
 development happens in the primary `opencircuit-dev` repository; this
 repository exists so that anyone can install a release without needing
@@ -62,6 +62,33 @@ staging and is not copied into this repository.
 
 Do not hand-edit the root-level tarball or checksum; the next automated publish
 replaces them.
+
+<!-- PACKAGED_CONFIGURATION_START -->
+
+## Packaged Configuration
+
+This release includes 6 starter templates:
+
+- `config-anthropic.yaml`
+- `config-byom.yaml`
+- `config-gemini.yaml`
+- `config-meta.yaml`
+- `config-olmo.yaml`
+- `config-openai.yaml`
+
+The CLI installs these templates under `~/.ocircuit/templates/`. Select one
+for `~/.ocircuit/config.yaml`; keep provider credentials in the private
+`~/.ocircuit/.env` file, not in a template. Do not activate multiple provider configs.
+
+```bash
+cp ~/.ocircuit/templates/config-openai.yaml ~/.ocircuit/config.yaml
+chmod 600 ~/.ocircuit/config.yaml
+```
+
+Meta uses `META_MODEL_API_KEY`. For OLMo, set your Ollama server address
+in `config-olmo.yaml`; OLMo sessions are chat-only with tools disabled.
+
+<!-- PACKAGED_CONFIGURATION_END -->
 
 ## License
 
