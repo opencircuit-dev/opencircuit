@@ -9,8 +9,8 @@ installation guidance, not the application source. Start with the
 
 <!-- VERSIONS_TABLE_START -->
 
-| Version | Artifact | Checksum |
-| ------- | -------- | -------- |
+| Version  | Artifact                                                 | Checksum                                                               |
+| -------- | -------------------------------------------------------- | ---------------------------------------------------------------------- |
 | `v1.0.1` | [`opencircuit-cli-1.0.1.tgz`](opencircuit-cli-1.0.1.tgz) | [`opencircuit-cli-1.0.1.tgz.sha256`](opencircuit-cli-1.0.1.tgz.sha256) |
 
 <!-- VERSIONS_TABLE_END -->
