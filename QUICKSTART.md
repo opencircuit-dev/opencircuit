@@ -1,138 +1,111 @@
-# Open Circuit Quickstart
+# Open Circuit CLI Quickstart
 
-This guide gets you from zero to a working `oc` command using the packaged
-release tarballs published in this repository.
+This repository contains installable CLI releases, not source code. To
+contribute, use the contributor documentation in the
+[source repository](https://github.com/open-circuit-dev/opencircuit-dev).
 
-This repository only distributes releases. If you want to contribute to
-Open Circuit itself, use the source repository's contributor documentation
-instead of this guide.
+## 1. Requirements
 
-## 1. Check Node.js
-
-Open Circuit supports Node.js `>=24.19.0 <27`; use Node.js `24.19.0` for the
-project baseline.
+Use Node.js `>=24.19.0 <27`; `24.19.0` is the project baseline.
 
 ```bash
-node --version
-```
-
-If you use `nvm`:
-
-```bash
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-
-nvm install 24
-nvm alias default 24
-nvm use 24
-
 node --version
 npm --version
 ```
 
-## 2. Download the current release
+## 2. Download the available release
 
 <!-- LATEST_ARTIFACT_START -->
 
-For the newest release, download the root-level bundle and checksum:
+Download the latest tarball and its checksum from this repository:
 
 - [`opencircuit-cli-1.0.1.tgz`](opencircuit-cli-1.0.1.tgz)
 - [`opencircuit-cli-1.0.1.tgz.sha256`](opencircuit-cli-1.0.1.tgz.sha256)
 
 <!-- LATEST_ARTIFACT_END -->
 
-## 3. Verify the checksum
+The source package version is now 1.0.2, but its new archive has not yet been
+published here. Use the files linked above until the 1.0.2 artifact appears.
 
-From the directory containing both files for your chosen `<version>`:
+## 3. Verify and install
+
+Run these commands in the directory containing the downloaded files:
 
 ```bash
 shasum -a 256 -c opencircuit-cli-<version>.tgz.sha256
-```
-
-Expected output:
-
-```text
-opencircuit-cli-<version>.tgz: OK
-```
-
-Do not install a tarball whose checksum does not match.
-
-## 4. Install the CLI
-
-```bash
 npm install --global ./opencircuit-cli-<version>.tgz
-```
-
-Confirm the install:
-
-```bash
 command -v oc
 oc --version
 ```
 
-Local command execution uses a fixed non-login shell and a minimal environment,
-so shell profiles and parent `PATH` values are not inherited. Public URL
-retrieval tools accept only public HTTPS destinations on port 443. These
-boundaries can affect existing workflows and are not an operating-system
-sandbox. See the
-[project security policy](https://github.com/opencircuit-dev/opencircuit-dev/blob/main/SECURITY.md)
-for details.
+The checksum must report `OK`. Keep the tarball and checksum from the same
+release; do not install if they do not match.
 
-<!-- PACKAGED_CONFIGURATION_START -->
+## 4. Choose one provider
 
-## Packaged Configuration
-
-This release includes 6 starter templates:
-
-- `config-anthropic.yaml`
-- `config-byom.yaml`
-- `config-gemini.yaml`
-- `config-meta.yaml`
-- `config-olmo.yaml`
-- `config-openai.yaml`
-
-The CLI installs these templates under `~/.ocircuit/templates/`. Select one
-for `~/.ocircuit/config.yaml`; keep provider credentials in the private
-`~/.ocircuit/.env` file, not in a template. Do not activate multiple provider configs.
+The package installs starter templates under `~/.ocircuit/templates/` without
+overwriting existing files. Copy one template for the provider you intend to
+use:
 
 ```bash
+mkdir -p ~/.ocircuit
+chmod 700 ~/.ocircuit
 cp ~/.ocircuit/templates/config-openai.yaml ~/.ocircuit/config.yaml
 chmod 600 ~/.ocircuit/config.yaml
 ```
 
-Meta uses `META_MODEL_API_KEY`. For OLMo, set your Ollama server address
-in `config-olmo.yaml`; OLMo sessions are chat-only with tools disabled.
+Put the provider key in `~/.ocircuit/.env`, not in the configuration file:
 
-<!-- PACKAGED_CONFIGURATION_END -->
+```bash
+printf '%s\n' 'OPENAI_API_KEY=replace-with-your-key' > ~/.ocircuit/.env
+chmod 600 ~/.ocircuit/.env
+```
 
-## 5. First commands
+Use `ANTHROPIC_API_KEY` or `GEMINI_API_KEY` for the corresponding provider.
+For hosted Open Circuit, use `OCIRCUIT_API_KEY`.
+
+### BYOM and Ollama
+
+The `config-byom.yaml` template is for an OpenAI-compatible endpoint. Set
+`BYOM_API_KEY` in `~/.ocircuit/.env`; an unauthenticated local server can use
+an empty value. Use HTTPS for remote endpoints. Plain HTTP should only be used
+on a trusted network.
+
+The `config-olmo.yaml` template targets an Ollama-compatible server on port
+`11434`. Replace the example hostname and model with values reachable from
+your machine. OLMo is chat-only in this template because tools are disabled.
+
+## 5. Try `oc`
 
 ```bash
 oc --help
-oc                       # Start an interactive session
-oc -p "Review this code" # Run one prompt and exit
-oc ls                    # List saved sessions
-oc --resume              # Resume the previous session
+oc
+oc -p "Reply with exactly OK." --silent
+oc ls
+oc --resume
 ```
 
-## 6. Troubleshooting
-
-### `oc: command not found`
-
-The global npm binary directory may not be on your `PATH`:
+For an explicit configuration:
 
 ```bash
-npm prefix --global
+oc --config ~/.ocircuit/config.yaml
 ```
 
-Add the reported directory to your shell `PATH` and open a new terminal.
+## Troubleshooting
 
-### Checksum mismatch
+If `oc` is not found after installing, check your Node version and global npm
+prefix:
 
-Re-download the tarball and checksum together from this repository; do not
-mix files from different versions or sources.
+```bash
+node --version
+npm prefix --global
+command -v oc
+```
 
-### You want to build from source or contribute
+Global npm packages are installed separately for each Node version. If
+checksum verification fails, download the matching archive and checksum again.
 
-This repository does not contain source code. See the primary Open Circuit
-project repository for build-from-source and contributor instructions.
+Local terminal commands use a fixed non-login shell; shell profiles and parent
+`PATH` values are not inherited. Public URL retrieval tools accept only public
+HTTPS destinations on port 443. See the
+[security policy](https://github.com/open-circuit-dev/opencircuit-dev/blob/main/SECURITY.md).

@@ -1,27 +1,11 @@
-# Open Circuit — Release Artifacts
+# Open Circuit — CLI Releases
 
-> Public distribution point for packaged `oc` CLI releases.
+This repository distributes the Open Circuit CLI (`oc`) as versioned npm
+package tarballs with SHA-256 checksums. It contains release artifacts and
+installation guidance, not the application source. Start with the
+[QUICKSTART](QUICKSTART.md).
 
-[![License](https://img.shields.io/badge/license-Apache--2.0-2563eb)](LICENSE)
-
-This repository publishes versioned release tarballs with SHA-256 checksums for the Open
-Circuit CLI (`oc`). It does not contain the project's source code. Source
-development happens in the primary `opencircuit-dev` repository; this
-repository exists so that anyone can install a release without needing
-access to that source repository.
-
-New to Open Circuit? Start with **[QUICKSTART.md](QUICKSTART.md)**.
-
-## What is published here
-
-The current release is published at the repository root:
-
-- `opencircuit-cli-<version>.tgz` — the installable npm package tarball
-- `opencircuit-cli-<version>.tgz.sha256` — its SHA-256 checksum
-
-Verify the checksum before installing. The root-level pair is refreshed automatically on each publication.
-
-## Available versions
+## Current release
 
 <!-- VERSIONS_TABLE_START -->
 
@@ -31,9 +15,7 @@ Verify the checksum before installing. The root-level pair is refreshed automati
 
 <!-- VERSIONS_TABLE_END -->
 
-## Latest release
-
-The current bundle and checksum are always published at the repository root:
+The release pair is also linked at the repository root:
 
 <!-- LATEST_ARTIFACT_START -->
 
@@ -42,35 +24,20 @@ The current bundle and checksum are always published at the repository root:
 
 <!-- LATEST_ARTIFACT_END -->
 
-## Install
+Verify the checksum before installing:
 
 ```bash
 shasum -a 256 -c opencircuit-cli-<version>.tgz.sha256
-npm install --global opencircuit-cli-<version>.tgz
+npm install --global ./opencircuit-cli-<version>.tgz
 oc --version
 ```
 
-See [QUICKSTART.md](QUICKSTART.md) for the full walkthrough, including
-Node.js setup and first commands.
+The current source package is 1.0.2, but its artifact has not yet been
+published to this distribution checkout. The links above describe the files
+actually available here. The next verified publication updates the artifact
+and these version markers together.
 
-## Security and compatibility
-
-The CLI applies restrictions to local command execution and public URL
-retrieval. These can affect workflows that depend on shell startup profiles or
-non-public HTTP destinations. See the
-[project security policy](https://github.com/opencircuit-dev/opencircuit-dev/blob/main/SECURITY.md)
-for the exact boundaries and limitations; these controls are not an
-operating-system sandbox.
-
-## How this repository is updated
-
-This repository is a generated distribution point. The source repository builds
-and validates the CLI, then publishes only the newest tarball and checksum at
-this repository root. The source-side `release-artifacts/` directory is build
-staging and is not copied into this repository.
-
-Do not hand-edit the root-level tarball or checksum; the next automated publish
-replaces them.
+## Configuration included in the release
 
 <!-- PACKAGED_CONFIGURATION_START -->
 
@@ -85,21 +52,35 @@ This release includes 6 starter templates:
 - `config-olmo.yaml`
 - `config-openai.yaml`
 
-The CLI installs these templates under `~/.ocircuit/templates/`. Select one
-for `~/.ocircuit/config.yaml`; keep provider credentials in the private
-`~/.ocircuit/.env` file, not in a template. Do not activate multiple provider configs.
+The CLI installs templates under `~/.ocircuit/templates/` without overwriting
+existing files. Copy one provider template to `~/.ocircuit/config.yaml`.
+Keep credentials in the private `~/.ocircuit/.env` file, not in YAML.
 
 ```bash
 cp ~/.ocircuit/templates/config-openai.yaml ~/.ocircuit/config.yaml
 chmod 600 ~/.ocircuit/config.yaml
 ```
 
-Meta uses `META_MODEL_API_KEY`. For OLMo, set your Ollama server address
-in `config-olmo.yaml`; OLMo sessions are chat-only with tools disabled.
+Meta uses `META_MODEL_API_KEY`. For OLMo, set the Ollama server address in
+`config-olmo.yaml`; OLMo sessions are chat-only with tools disabled.
 
 <!-- PACKAGED_CONFIGURATION_END -->
 
+## Security and compatibility
+
+Local command execution uses a fixed non-login shell and a minimal environment.
+Public URL tools accept only public HTTPS destinations on port 443. These
+restrictions can affect existing workflows and are not an operating-system
+sandbox. See the
+[project security policy](https://github.com/open-circuit-dev/opencircuit-dev/blob/main/SECURITY.md).
+
+## Publication
+
+The source repository builds and validates the package before updating this
+distribution checkout. The root tarball and checksum, version links, and
+packaged-template summary are refreshed from the verified archive. Do not
+manually replace the generated artifact files.
+
 ## License
 
-Apache License 2.0 — see [LICENSE](LICENSE). Released tarballs carry the same
-license as the upstream project.
+Apache License 2.0. The release package carries the upstream license.
