@@ -9,8 +9,8 @@ instead of this guide.
 
 ## 1. Check Node.js
 
-Open Circuit expects a recent Node.js LTS release (24.x at the time of
-writing).
+Open Circuit supports Node.js `>=24.19.0 <27`; use Node.js `24.19.0` for the
+project baseline.
 
 ```bash
 node --version
@@ -69,6 +69,14 @@ Confirm the install:
 command -v oc
 oc --version
 ```
+
+Local command execution uses a fixed non-login shell and a minimal environment,
+so shell profiles and parent `PATH` values are not inherited. Public URL
+retrieval tools accept only public HTTPS destinations on port 443. These
+boundaries can affect existing workflows and are not an operating-system
+sandbox. See the
+[project security policy](https://github.com/opencircuit-dev/opencircuit-dev/blob/main/SECURITY.md)
+for details.
 
 <!-- PACKAGED_CONFIGURATION_START -->
 

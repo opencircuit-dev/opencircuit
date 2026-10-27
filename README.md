@@ -53,6 +53,15 @@ oc --version
 See [QUICKSTART.md](QUICKSTART.md) for the full walkthrough, including
 Node.js setup and first commands.
 
+## Security and compatibility
+
+The CLI applies restrictions to local command execution and public URL
+retrieval. These can affect workflows that depend on shell startup profiles or
+non-public HTTP destinations. See the
+[project security policy](https://github.com/opencircuit-dev/opencircuit-dev/blob/main/SECURITY.md)
+for the exact boundaries and limitations; these controls are not an
+operating-system sandbox.
+
 ## How this repository is updated
 
 This repository is a generated distribution point. The source repository builds
