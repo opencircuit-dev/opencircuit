@@ -17,10 +17,10 @@ npm --version
 
 <!-- LATEST_ARTIFACT_START -->
 
-Download the latest tarball and its checksum from this repository:
+For the newest release, download the root-level bundle and checksum:
 
-- [`opencircuit-cli-1.0.1.tgz`](opencircuit-cli-1.0.1.tgz)
-- [`opencircuit-cli-1.0.1.tgz.sha256`](opencircuit-cli-1.0.1.tgz.sha256)
+- [`opencircuit-cli-1.0.2.tgz`](opencircuit-cli-1.0.2.tgz)
+- [`opencircuit-cli-1.0.2.tgz.sha256`](opencircuit-cli-1.0.2.tgz.sha256)
 
 <!-- LATEST_ARTIFACT_END -->
 
@@ -109,3 +109,31 @@ Local terminal commands use a fixed non-login shell; shell profiles and parent
 `PATH` values are not inherited. Public URL retrieval tools accept only public
 HTTPS destinations on port 443. See the
 [security policy](https://github.com/open-circuit-dev/opencircuit-dev/blob/main/SECURITY.md).
+
+<!-- PACKAGED_CONFIGURATION_START -->
+
+## Packaged Configuration
+
+This release includes 6 starter templates:
+
+- `config-anthropic.yaml`
+- `config-byom.yaml`
+- `config-gemini.yaml`
+- `config-meta.yaml`
+- `config-olmo.yaml`
+- `config-openai.yaml`
+
+The CLI installs these templates under `~/.ocircuit/templates/`. Select one
+for `~/.ocircuit/config.yaml`; keep provider credentials in the private
+`~/.ocircuit/.env` file, not in a template. Do not activate multiple provider configs.
+
+```bash
+cp ~/.ocircuit/templates/config-openai.yaml ~/.ocircuit/config.yaml
+chmod 600 ~/.ocircuit/config.yaml
+```
+
+Meta uses `META_MODEL_API_KEY`. For OLMo, set your Ollama server address
+in `config-olmo.yaml`; OLMo sessions are chat-only with tools disabled.
+
+<!-- PACKAGED_CONFIGURATION_END -->
+
