@@ -24,8 +24,8 @@ Download the latest tarball and its checksum from this repository:
 
 <!-- LATEST_ARTIFACT_END -->
 
-The source package version is now 1.0.2, but its new archive has not yet been
-published here. Use the files linked above until the 1.0.2 artifact appears.
+Use only the artifacts linked above. A source repository may have a newer
+package version before its release archive is published here.
 
 ## 3. Verify and install
 

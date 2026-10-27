@@ -32,10 +32,10 @@ npm install --global ./opencircuit-cli-<version>.tgz
 oc --version
 ```
 
-The current source package is 1.0.2, but its artifact has not yet been
-published to this distribution checkout. The links above describe the files
-actually available here. The next verified publication updates the artifact
-and these version markers together.
+The links above describe the files actually available here. Source repositories
+may contain a newer package version before its release is published. The
+verified publication process updates the artifact and these version markers
+together.
 
 ## Configuration included in the release
 
