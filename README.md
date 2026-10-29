@@ -9,9 +9,8 @@ installation guidance, not the application source. Start with the
 
 <!-- VERSIONS_TABLE_START -->
 
-| Version | Artifact | Checksum |
-| ------- | -------- | -------- |
-| `v1.0.2` | [`opencircuit-cli-1.0.2.tgz`](opencircuit-cli-1.0.2.tgz) | [`opencircuit-cli-1.0.2.tgz.sha256`](opencircuit-cli-1.0.2.tgz.sha256) |
+No release is currently available. Versions 1.0.0–1.0.2 are
+[withdrawn](WITHDRAWN.md); the next release will be published here.
 
 <!-- VERSIONS_TABLE_END -->
 
@@ -19,8 +18,7 @@ The release pair is also linked at the repository root:
 
 <!-- LATEST_ARTIFACT_START -->
 
-- [`opencircuit-cli-1.0.2.tgz`](opencircuit-cli-1.0.2.tgz)
-- [`opencircuit-cli-1.0.2.tgz.sha256`](opencircuit-cli-1.0.2.tgz.sha256)
+No artifact is currently published.
 
 <!-- LATEST_ARTIFACT_END -->
 
@@ -41,30 +39,15 @@ together.
 
 <!-- PACKAGED_CONFIGURATION_START -->
 
-## Packaged Configuration
-
-This release includes 6 starter templates:
-
-- `config-anthropic.yaml`
-- `config-byom.yaml`
-- `config-gemini.yaml`
-- `config-meta.yaml`
-- `config-olmo.yaml`
-- `config-openai.yaml`
-
-The CLI installs these templates under `~/.ocircuit/templates/`. Select one
-for `~/.ocircuit/config.yaml`; keep provider credentials in the private
-`~/.ocircuit/.env` file, not in a template. Do not activate multiple provider configs.
-
-```bash
-cp ~/.ocircuit/templates/config-openai.yaml ~/.ocircuit/config.yaml
-chmod 600 ~/.ocircuit/config.yaml
-```
-
-Meta uses `META_MODEL_API_KEY`. For OLMo, set your Ollama server address
-in `config-olmo.yaml`; OLMo sessions are chat-only with tools disabled.
+The packaged starter templates are listed here when a release is available.
 
 <!-- PACKAGED_CONFIGURATION_END -->
+
+## Withdrawn releases
+
+Versions 1.0.0, 1.0.1, and 1.0.2 are withdrawn and will not be republished.
+See [WITHDRAWN.md](WITHDRAWN.md) for the reason, the affected artifact
+digests, and what to do if you installed one.
 
 ## Security and compatibility
 

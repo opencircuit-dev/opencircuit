@@ -17,10 +17,8 @@ npm --version
 
 <!-- LATEST_ARTIFACT_START -->
 
-For the newest release, download the root-level bundle and checksum:
-
-- [`opencircuit-cli-1.0.2.tgz`](opencircuit-cli-1.0.2.tgz)
-- [`opencircuit-cli-1.0.2.tgz.sha256`](opencircuit-cli-1.0.2.tgz.sha256)
+No release is currently available. Versions 1.0.0–1.0.2 are
+[withdrawn](WITHDRAWN.md); the next release will be published here.
 
 <!-- LATEST_ARTIFACT_END -->
 

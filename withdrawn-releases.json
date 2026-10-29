@@ -1,0 +1,82 @@
+{
+  "schemaVersion": "open-circuit.withdrawn-releases.v1",
+  "description": "CLI versions that are withdrawn and must never be republished. Every artifact digest ever distributed under each version is listed so installed copies can be identified.",
+  "withdrawn": [
+    {
+      "version": "1.0.0",
+      "withdrawn": "2026-10-29",
+      "reason": "The package shipped without the Apache-2.0 license text, the Continue attribution NOTICE, or third-party notices for bundled dependencies, and was published without provenance or an SBOM.",
+      "distributedArtifacts": [
+        {
+          "sha256": "7d52da2dff8bb4ae02f18602e2c6c71eda3892a7132da2c8707b5fe5ec5f9fa1",
+          "firstSeenCommit": "466037e",
+          "firstSeen": "2026-09-24"
+        }
+      ]
+    },
+    {
+      "version": "1.0.1",
+      "withdrawn": "2026-10-29",
+      "reason": "The package shipped without the Apache-2.0 license text, the Continue attribution NOTICE, or third-party notices for bundled dependencies, and was published without provenance or an SBOM. The version was also replaced in place 7 time(s), so 8 different artifacts were distributed under the same version number.",
+      "distributedArtifacts": [
+        {
+          "sha256": "9ebae26172a9e0e09ef1fb7e32602550a944a7dbfb0130457be6a4553022788b",
+          "firstSeenCommit": "40e66b7",
+          "firstSeen": "2026-09-26"
+        },
+        {
+          "sha256": "b6527f085eb141bce5e52bae57a27c466557be77b72eceecec57d9331773cb1d",
+          "firstSeenCommit": "15f51c2",
+          "firstSeen": "2026-09-26"
+        },
+        {
+          "sha256": "093c3f620fb7fb76e45f45e1c7891cf1b29fe045926798ec6c74d63c2db9c8b2",
+          "firstSeenCommit": "7b14a4b",
+          "firstSeen": "2026-10-02"
+        },
+        {
+          "sha256": "5ef0135628a4984662601d570f78d62ba7dba872712dbed5e2908ef0089575b2",
+          "firstSeenCommit": "416dbfa",
+          "firstSeen": "2026-10-15"
+        },
+        {
+          "sha256": "fa26c5c70501bfc7d0ced096abd54d4e5ad752a9cf4a125126341618beb18263",
+          "firstSeenCommit": "c7f52b0",
+          "firstSeen": "2026-10-15"
+        },
+        {
+          "sha256": "fd1283167b0deb308db5bd9eb3c6f700185e0ee435cf2447e27ffd914023ce8f",
+          "firstSeenCommit": "bad9433",
+          "firstSeen": "2026-10-21"
+        },
+        {
+          "sha256": "b938f637909e0b6f9b7400c1dab3c103c41ba204885a1ad9d3612b153fffdbc7",
+          "firstSeenCommit": "ece48b4",
+          "firstSeen": "2026-10-22"
+        },
+        {
+          "sha256": "39ba4fe8dd0f075cbce2f034d97d445083ae0f2fe047953cff844196eccb9c5f",
+          "firstSeenCommit": "16a7a58",
+          "firstSeen": "2026-10-26"
+        }
+      ]
+    },
+    {
+      "version": "1.0.2",
+      "withdrawn": "2026-10-29",
+      "reason": "The package shipped without the Apache-2.0 license text, the Continue attribution NOTICE, or third-party notices for bundled dependencies, and was published without provenance or an SBOM. The version was also replaced in place 1 time(s), so 2 different artifacts were distributed under the same version number.",
+      "distributedArtifacts": [
+        {
+          "sha256": "488be59b1e1e57a121ec8f912a7b8abb4231808935e63b049ee5e9ed331a62bc",
+          "firstSeenCommit": "f59a3f7",
+          "firstSeen": "2026-10-26"
+        },
+        {
+          "sha256": "9472b482638e21fa89b924602baa0e4fbfb0d08adcbe746431b6ae3498baca91",
+          "firstSeenCommit": "89ef6d8",
+          "firstSeen": "2026-10-26"
+        }
+      ]
+    }
+  ]
+}
