@@ -1,16 +1,19 @@
 # Open Circuit — CLI Releases
 
-This repository distributes the Open Circuit CLI (`oc`) as versioned npm
-package tarballs with SHA-256 checksums. It contains release artifacts and
-installation guidance, not the application source. Start with the
+This repository distributes the Open Circuit CLI (`oc`) as versioned package
+tarballs with SHA-256 checksums. Stable releases are also published to npm,
+but this repository is the source for downloadable archives and associated
+release metadata. It contains release artifacts and installation guidance,
+not the application source. Start with the
 [QUICKSTART](QUICKSTART.md).
 
 ## Current release
 
 <!-- VERSIONS_TABLE_START -->
 
-No release is currently available. Versions 1.0.0–1.0.2 are
-[withdrawn](WITHDRAWN.md); the next release will be published here.
+| Version | Artifact | Checksum |
+| ------- | -------- | -------- |
+| `v1.0.3` | [`opencircuit-cli-1.0.3.tgz`](opencircuit-cli-1.0.3.tgz) | [`opencircuit-cli-1.0.3.tgz.sha256`](opencircuit-cli-1.0.3.tgz.sha256) |
 
 <!-- VERSIONS_TABLE_END -->
 
@@ -18,7 +21,8 @@ The release pair is also linked at the repository root:
 
 <!-- LATEST_ARTIFACT_START -->
 
-No artifact is currently published.
+- [`opencircuit-cli-1.0.3.tgz`](opencircuit-cli-1.0.3.tgz)
+- [`opencircuit-cli-1.0.3.tgz.sha256`](opencircuit-cli-1.0.3.tgz.sha256)
 
 <!-- LATEST_ARTIFACT_END -->
 
@@ -39,7 +43,28 @@ together.
 
 <!-- PACKAGED_CONFIGURATION_START -->
 
-The packaged starter templates are listed here when a release is available.
+## Packaged Configuration
+
+This release includes 6 starter templates:
+
+- `config-anthropic.yaml`
+- `config-byom.yaml`
+- `config-gemini.yaml`
+- `config-meta.yaml`
+- `config-olmo.yaml`
+- `config-openai.yaml`
+
+The CLI installs these templates under `~/.ocircuit/templates/`. Select one
+for `~/.ocircuit/config.yaml`; keep provider credentials in the private
+`~/.ocircuit/.env` file, not in a template. Do not activate multiple provider configs.
+
+```bash
+cp ~/.ocircuit/templates/config-openai.yaml ~/.ocircuit/config.yaml
+chmod 600 ~/.ocircuit/config.yaml
+```
+
+Meta uses `META_MODEL_API_KEY`. For OLMo, set your Ollama server address
+in `config-olmo.yaml`; OLMo sessions are chat-only with tools disabled.
 
 <!-- PACKAGED_CONFIGURATION_END -->
 
