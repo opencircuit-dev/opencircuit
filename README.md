@@ -1,8 +1,10 @@
 # Open Circuit — CLI Releases
 
-This repository distributes the Open Circuit CLI (`oc`) as versioned npm
-package tarballs with SHA-256 checksums. It contains release artifacts and
-installation guidance, not the application source. Start with the
+This repository distributes the Open Circuit CLI (`oc`) as versioned package
+tarballs with SHA-256 checksums. Stable releases are also published to npm,
+but this repository is the source for downloadable archives and associated
+release metadata. It contains release artifacts and installation guidance,
+not the application source. Start with the
 [QUICKSTART](QUICKSTART.md).
 
 ## Current release
@@ -11,7 +13,7 @@ installation guidance, not the application source. Start with the
 
 | Version | Artifact | Checksum |
 | ------- | -------- | -------- |
-| `v1.0.2` | [`opencircuit-cli-1.0.2.tgz`](opencircuit-cli-1.0.2.tgz) | [`opencircuit-cli-1.0.2.tgz.sha256`](opencircuit-cli-1.0.2.tgz.sha256) |
+| `v1.0.3` | [`opencircuit-cli-1.0.3.tgz`](opencircuit-cli-1.0.3.tgz) | [`opencircuit-cli-1.0.3.tgz.sha256`](opencircuit-cli-1.0.3.tgz.sha256) |
 
 <!-- VERSIONS_TABLE_END -->
 
@@ -19,8 +21,8 @@ The release pair is also linked at the repository root:
 
 <!-- LATEST_ARTIFACT_START -->
 
-- [`opencircuit-cli-1.0.2.tgz`](opencircuit-cli-1.0.2.tgz)
-- [`opencircuit-cli-1.0.2.tgz.sha256`](opencircuit-cli-1.0.2.tgz.sha256)
+- [`opencircuit-cli-1.0.3.tgz`](opencircuit-cli-1.0.3.tgz)
+- [`opencircuit-cli-1.0.3.tgz.sha256`](opencircuit-cli-1.0.3.tgz.sha256)
 
 <!-- LATEST_ARTIFACT_END -->
 
@@ -65,6 +67,12 @@ Meta uses `META_MODEL_API_KEY`. For OLMo, set your Ollama server address
 in `config-olmo.yaml`; OLMo sessions are chat-only with tools disabled.
 
 <!-- PACKAGED_CONFIGURATION_END -->
+
+## Withdrawn releases
+
+Versions 1.0.0, 1.0.1, and 1.0.2 are withdrawn and will not be republished.
+See [WITHDRAWN.md](WITHDRAWN.md) for the reason, the affected artifact
+digests, and what to do if you installed one.
 
 ## Security and compatibility
 

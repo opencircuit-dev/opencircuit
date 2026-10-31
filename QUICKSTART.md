@@ -19,8 +19,8 @@ npm --version
 
 For the newest release, download the root-level bundle and checksum:
 
-- [`opencircuit-cli-1.0.2.tgz`](opencircuit-cli-1.0.2.tgz)
-- [`opencircuit-cli-1.0.2.tgz.sha256`](opencircuit-cli-1.0.2.tgz.sha256)
+- [`opencircuit-cli-1.0.3.tgz`](opencircuit-cli-1.0.3.tgz)
+- [`opencircuit-cli-1.0.3.tgz.sha256`](opencircuit-cli-1.0.3.tgz.sha256)
 
 <!-- LATEST_ARTIFACT_END -->
 
