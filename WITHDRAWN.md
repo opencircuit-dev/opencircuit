@@ -1,6 +1,6 @@
 # Withdrawn releases
 
-Open Circuit CLI versions **1.0.0, 1.0.1, and 1.0.2 are withdrawn** as of
+Open Circuit CLI releases **before 1.0.3 are withdrawn** as of
 2026-10-29. They have been removed from this repository and will not be
 republished. The publication tooling refuses any version listed in
 [`withdrawn-releases.json`](withdrawn-releases.json).
@@ -12,16 +12,16 @@ republished. The publication tooling refuses any version listed in
   [Continue](https://github.com/continuedev/continue), or notices for the
   third-party code bundled into the CLI.
 - None were published with provenance or a software bill of materials.
-- 1.0.1 and 1.0.2 were rebuilt and replaced in place under the same version
-  number. Eight different 1.0.1 artifacts and two different 1.0.2 artifacts
-  were distributed, so a version number alone does not identify what you
-  installed.
+- Some withdrawn releases were rebuilt and replaced in place under the same
+  version number, so a version number alone does not identify what you
+  installed. The machine-readable withdrawal record retains those versions
+  and artifact digests to identify affected copies and prevent republication.
 
 ## If you installed one of these versions
 
 1. Check what you have: `oc --version`.
 2. Remove it: `npm uninstall --global @opencircuit/cli`.
-3. Install the next release from this repository once it is published, and
+3. Install version 1.0.3 from this repository, and
    verify it with the instructions in the [README](README.md).
 
 To identify a specific downloaded tarball, compare its SHA-256

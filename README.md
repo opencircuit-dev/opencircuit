@@ -11,8 +11,8 @@ not the application source. Start with the
 
 <!-- VERSIONS_TABLE_START -->
 
-| Version | Artifact | Checksum |
-| ------- | -------- | -------- |
+| Version  | Artifact                                                 | Checksum                                                               |
+| -------- | -------------------------------------------------------- | ---------------------------------------------------------------------- |
 | `v1.0.3` | [`opencircuit-cli-1.0.3.tgz`](opencircuit-cli-1.0.3.tgz) | [`opencircuit-cli-1.0.3.tgz.sha256`](opencircuit-cli-1.0.3.tgz.sha256) |
 
 <!-- VERSIONS_TABLE_END -->
@@ -29,8 +29,8 @@ The release pair is also linked at the repository root:
 Verify the checksum before installing:
 
 ```bash
-shasum -a 256 -c opencircuit-cli-<version>.tgz.sha256
-npm install --global ./opencircuit-cli-<version>.tgz
+shasum -a 256 -c opencircuit-cli-1.0.3.tgz.sha256
+npm install --global ./opencircuit-cli-1.0.3.tgz
 oc --version
 ```
 
@@ -70,7 +70,7 @@ in `config-olmo.yaml`; OLMo sessions are chat-only with tools disabled.
 
 ## Withdrawn releases
 
-Versions 1.0.0, 1.0.1, and 1.0.2 are withdrawn and will not be republished.
+Releases before 1.0.3 are withdrawn and will not be republished.
 See [WITHDRAWN.md](WITHDRAWN.md) for the reason, the affected artifact
 digests, and what to do if you installed one.
 
@@ -88,6 +88,23 @@ The source repository builds and validates the package before updating this
 distribution checkout. The root tarball and checksum, version links, and
 packaged-template summary are refreshed from the verified archive. Do not
 manually replace the generated artifact files.
+
+Maintainers regenerate the public source and distribution through the canonical
+orchestration entry:
+
+```bash
+/path/to/opencircuit-orchestration/scripts/opencircuit-orchestration.sh \
+  --target self --action opencircuit-cli-release-publish \
+  --artifact opencircuit-cli-public
+```
+
+The source must be clean on `main`. The action validates the exact revision on
+Server1 and updates local outputs without committing or pushing. Tests and
+dependency audits must pass before a new archive is staged.
+
+The latest regeneration attempt failed the root dependency audit. The existing
+1.0.3 archive is unchanged and predates the model-picker updates now on source
+`main`; do not infer archive contents from the source package version.
 
 ## License
 

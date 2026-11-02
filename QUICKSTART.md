@@ -27,13 +27,17 @@ For the newest release, download the root-level bundle and checksum:
 Use only the artifacts linked above. A source repository may have a newer
 package version before its release archive is published here.
 
+The current archive is version **1.0.3**. It predates the latest source
+model-picker updates: regeneration failed the release dependency audit, so the
+downloadable archive has not been refreshed.
+
 ## 3. Verify and install
 
 Run these commands in the directory containing the downloaded files:
 
 ```bash
-shasum -a 256 -c opencircuit-cli-<version>.tgz.sha256
-npm install --global ./opencircuit-cli-<version>.tgz
+shasum -a 256 -c opencircuit-cli-1.0.3.tgz.sha256
+npm install --global ./opencircuit-cli-1.0.3.tgz
 command -v oc
 oc --version
 ```
@@ -91,6 +95,10 @@ For an explicit configuration:
 oc --config ~/.ocircuit/config.yaml
 ```
 
+In an interactive session, use `/model` to open the model picker. Use the arrow
+keys and Enter to select a configured chat model, or Esc to cancel. Use unique
+configured model names for reliable preference restoration after restarting.
+
 ## Troubleshooting
 
 If `oc` is not found after installing, check your Node version and global npm
@@ -136,4 +144,3 @@ Meta uses `META_MODEL_API_KEY`. For OLMo, set your Ollama server address
 in `config-olmo.yaml`; OLMo sessions are chat-only with tools disabled.
 
 <!-- PACKAGED_CONFIGURATION_END -->
-
