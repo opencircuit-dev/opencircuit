@@ -11,9 +11,9 @@ Start with the
 
 <!-- VERSIONS_TABLE_START -->
 
-| Version  | Artifact                                                 | Checksum                                                               |
-| -------- | -------------------------------------------------------- | ---------------------------------------------------------------------- |
-| `v1.0.3` | [`opencircuit-cli-1.0.3.tgz`](opencircuit-cli-1.0.3.tgz) | [`opencircuit-cli-1.0.3.tgz.sha256`](opencircuit-cli-1.0.3.tgz.sha256) |
+| Version | Artifact | Checksum |
+| ------- | -------- | -------- |
+| `v1.0.4` | [`opencircuit-cli-1.0.4.tgz`](opencircuit-cli-1.0.4.tgz) | [`opencircuit-cli-1.0.4.tgz.sha256`](opencircuit-cli-1.0.4.tgz.sha256) |
 
 <!-- VERSIONS_TABLE_END -->
 
@@ -21,16 +21,16 @@ The release pair is also linked at the repository root:
 
 <!-- LATEST_ARTIFACT_START -->
 
-- [`opencircuit-cli-1.0.3.tgz`](opencircuit-cli-1.0.3.tgz)
-- [`opencircuit-cli-1.0.3.tgz.sha256`](opencircuit-cli-1.0.3.tgz.sha256)
+- [`opencircuit-cli-1.0.4.tgz`](opencircuit-cli-1.0.4.tgz)
+- [`opencircuit-cli-1.0.4.tgz.sha256`](opencircuit-cli-1.0.4.tgz.sha256)
 
 <!-- LATEST_ARTIFACT_END -->
 
 Verify the checksum before installing:
 
 ```bash
-shasum -a 256 -c opencircuit-cli-1.0.3.tgz.sha256
-npm install --global ./opencircuit-cli-1.0.3.tgz
+shasum -a 256 -c opencircuit-cli-1.0.4.tgz.sha256
+npm install --global ./opencircuit-cli-1.0.4.tgz
 oc --version
 ```
 
@@ -39,10 +39,11 @@ may contain a newer package version before its release is published. The
 verified publication process updates the artifact and these version markers
 together.
 
-## Qualified 1.0.4 candidate
+## 1.0.4 qualification
 
-CLI **1.0.4 has completed qualification but is not distributed here yet**.
-The downloadable release above remains **1.0.3**.
+The **1.0.4** archive linked above is the exact qualified build, not a rebuild
+of the same source version. Its checksum, SBOM, notices, and provenance are
+distributed alongside it.
 
 On November 9, 2026, the exact merged source commit
 [`553654c7a46917ca3625c9b5e41990d09d1dd50f`](https://github.com/opencircuit-dev/opencircuit-dev/commit/553654c7a46917ca3625c9b5e41990d09d1dd50f)
@@ -63,8 +64,7 @@ fallback. These checks used isolated homes and loopback provider fixtures,
 not live provider APIs or user credentials. Artifact provenance is unsigned.
 See the [qualification record on PR #92](https://github.com/opencircuit-dev/opencircuit-dev/pull/92#issuecomment-6744836005).
 
-Distribution updates require separate explicit authorization. Do not construct
-1.0.4 download links or assume the 1.0.3 archive contains these features.
+The 1.0.4 model-discovery features are not present in the previous 1.0.3 archive.
 
 ## Configuration included in the release
 
@@ -116,15 +116,15 @@ distribution checkout. The root tarball and checksum, version links, and
 packaged-template summary are refreshed from the verified archive. Do not
 manually replace the generated artifact files.
 
-Build and host qualification do not authorize distribution. Promoting 1.0.4
-requires a separate decision to update the archive, checksum, SBOM, notices,
-provenance, and release links together. Use the exact qualified archive and
-SHA-256 recorded above; a rebuilt or changed archive requires requalification.
-The existing 1.0.3 distribution is unchanged.
+Build and host qualification do not by themselves authorize distribution.
+This separately authorized update promotes the exact qualified 1.0.4 archive,
+checksum, SBOM, notices, provenance, and release links together. A rebuilt or
+changed archive requires requalification. The root release files track the
+current version; the previous 1.0.3 files remain available in Git history.
 
 No release tag, npm publication, or stable-release workflow dispatch is part
-of this qualification. Tag/npm publication remains unsupported in the current
-distribution workflow.
+of this distribution update. Tag/npm publication remains unsupported in the
+current distribution workflow.
 
 ## License
 

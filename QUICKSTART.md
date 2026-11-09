@@ -19,19 +19,18 @@ npm --version
 
 For the newest release, download the root-level bundle and checksum:
 
-- [`opencircuit-cli-1.0.3.tgz`](opencircuit-cli-1.0.3.tgz)
-- [`opencircuit-cli-1.0.3.tgz.sha256`](opencircuit-cli-1.0.3.tgz.sha256)
+- [`opencircuit-cli-1.0.4.tgz`](opencircuit-cli-1.0.4.tgz)
+- [`opencircuit-cli-1.0.4.tgz.sha256`](opencircuit-cli-1.0.4.tgz.sha256)
 
 <!-- LATEST_ARTIFACT_END -->
 
 Use only the artifacts linked above. A source repository may have a newer
 package version before its release archive is published here.
 
-The downloadable archive is **1.0.3** and predates automatic model discovery.
-CLI **1.0.4** has passed Server1 release/security validation and isolated
-runtime/model-picker qualification on Ubuntu1 and Workstation1, but its
-distribution has not been authorized. See the
-[qualified candidate and checksum](README.md#qualified-104-candidate).
+The downloadable archive is **1.0.4**, including automatic model discovery.
+This exact build passed Server1 release/security validation and isolated
+runtime/model-picker qualification on Ubuntu1 and Workstation1. See the
+[qualification record and checksum](README.md#104-qualification).
 Tag/npm publication is not yet supported by the current distribution workflow.
 
 ## 3. Verify and install
@@ -39,21 +38,23 @@ Tag/npm publication is not yet supported by the current distribution workflow.
 Run these commands in the directory containing the downloaded files:
 
 ```bash
-shasum -a 256 -c opencircuit-cli-1.0.3.tgz.sha256
-npm install --global ./opencircuit-cli-1.0.3.tgz
+shasum -a 256 -c opencircuit-cli-1.0.4.tgz.sha256
+npm install --global ./opencircuit-cli-1.0.4.tgz
 command -v oc
 oc --version
 ```
 
 The checksum must report `OK`. Keep the tarball and checksum from the same
-release; do not install if they do not match. These commands install **1.0.3**;
-they are not an upgrade path for hosts already running the qualified 1.0.4 build.
+release; do not install if they do not match. `oc --version` should report
+`1.0.4`. Existing provider configuration does not need to be replaced to upgrade.
 
 ## 4. Choose one provider
 
 The package installs starter templates under `~/.ocircuit/templates/` without
-overwriting existing files. Copy one template for the provider you intend to
-use:
+overwriting existing files. For first-time setup, copy one template for the
+provider you intend to use. If you already have provider configuration and
+credentials, keep them; do not overwrite them with the setup commands below
+just to upgrade.
 
 ```bash
 mkdir -p ~/.ocircuit
@@ -102,18 +103,15 @@ oc --config ~/.ocircuit/config.yaml
 In an interactive session, use `/model` to open the model picker. Use the arrow
 keys and Enter to select a chat model, or Esc to cancel.
 
-**Downloadable 1.0.3:** the picker lists only models explicitly configured in
-YAML. A single OpenAI entry does not mean your provider account supports only
-one model. Add the desired chat models to the active configuration; use unique
-configured names.
-
-**Qualified 1.0.4:** the picker also discovers compatible chat models for the
+The 1.0.4 picker also discovers compatible chat models for the
 selected OpenAI, Anthropic, Gemini, or OpenAI-compatible provider profile.
 Entries are labeled configured or discovered, long lists scroll, and selections
 are saved for the matching provider profile across restarts. Endpoint settings
 and restrictions such as OLMo's disabled tools are preserved. If discovery
-fails, a warning is shown and configured models remain selectable. This
-behavior is not available in the 1.0.3 archive linked above.
+fails, a warning is shown and configured models remain selectable.
+
+When upgrading from 1.0.3, the picker is no longer limited to models explicitly
+listed in YAML. Explicitly configured models remain available.
 
 ## Troubleshooting
 

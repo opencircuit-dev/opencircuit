@@ -5,11 +5,11 @@
   "metadata": {
     "component": {
       "type": "application",
-      "bom-ref": "pkg:npm/%40opencircuit/cli@1.0.3",
+      "bom-ref": "pkg:npm/%40opencircuit/cli@1.0.4",
       "group": "@opencircuit",
       "name": "cli",
-      "version": "1.0.3",
-      "purl": "pkg:npm/%40opencircuit/cli@1.0.3",
+      "version": "1.0.4",
+      "purl": "pkg:npm/%40opencircuit/cli@1.0.4",
       "licenses": [
         {
           "expression": "Apache-2.0"
@@ -19,7 +19,7 @@
     "properties": [
       {
         "name": "opencircuit:closure-source",
-        "value": "extensions/cli/dist/meta.json"
+        "value": "extensions/cli/dist/meta.json plus extensions/cli/package-lock.json non-dev closure"
       }
     ]
   },
@@ -2524,6 +2524,44 @@
         {
           "name": "opencircuit:bundle-path",
           "value": "extensions/cli/node_modules/ansi-styles"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/argparse@2.0.1",
+      "name": "argparse",
+      "version": "2.0.1",
+      "purl": "pkg:npm/argparse@2.0.1",
+      "licenses": [
+        {
+          "expression": "Python-2.0"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "f3ef56a9e6db173a57f4e47e59ae8edbd6ac22881e44ccdc1ad00835da4c1c7c80835d1fd3969215505b704a867ff3d7c35123019faadbf6c4060dc3beeacadd"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/argparse/-/argparse-2.0.1.tgz"
+        }
+      ],
+      "properties": [
+        {
+          "name": "opencircuit:lockfile",
+          "value": "extensions/cli/package-lock.json"
+        },
+        {
+          "name": "opencircuit:install-time",
+          "value": "true"
+        },
+        {
+          "name": "opencircuit:install-path",
+          "value": "node_modules/argparse"
         }
       ]
     },
@@ -5448,7 +5486,11 @@
           "value": "extensions/cli/package-lock.json"
         },
         {
-          "name": "opencircuit:bundle-path",
+          "name": "opencircuit:install-time",
+          "value": "true"
+        },
+        {
+          "name": "opencircuit:install-path",
           "value": "extensions/cli/node_modules/fdir"
         }
       ]
@@ -5584,7 +5626,11 @@
           "value": "extensions/cli/package-lock.json"
         },
         {
-          "name": "opencircuit:bundle-path",
+          "name": "opencircuit:install-time",
+          "value": "true"
+        },
+        {
+          "name": "opencircuit:install-path",
           "value": "extensions/cli/node_modules/find-up"
         }
       ]
@@ -5860,7 +5906,11 @@
           "value": "extensions/cli/package-lock.json"
         },
         {
-          "name": "opencircuit:bundle-path",
+          "name": "opencircuit:install-time",
+          "value": "true"
+        },
+        {
+          "name": "opencircuit:install-path",
           "value": "extensions/cli/node_modules/fzf"
         }
       ]
@@ -7425,6 +7475,44 @@
     },
     {
       "type": "library",
+      "bom-ref": "pkg:npm/js-yaml@4.3.2",
+      "name": "js-yaml",
+      "version": "4.3.2",
+      "purl": "pkg:npm/js-yaml@4.3.2",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "48534ebd227e0e07fff409fdd38631f828129483c2908a5aa38aa8e7596979edb94c845e8dd1f7ae1478119306a0dc77fd33f73bec335ae893165e2ca9b96dcc"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/js-yaml/-/js-yaml-4.3.2.tgz"
+        }
+      ],
+      "properties": [
+        {
+          "name": "opencircuit:lockfile",
+          "value": "extensions/cli/package-lock.json"
+        },
+        {
+          "name": "opencircuit:install-time",
+          "value": "true"
+        },
+        {
+          "name": "opencircuit:install-path",
+          "value": "node_modules/js-yaml"
+        }
+      ]
+    },
+    {
+      "type": "library",
       "bom-ref": "pkg:npm/jsdom@24.1.3",
       "name": "jsdom",
       "version": "24.1.3",
@@ -7660,7 +7748,11 @@
           "value": "extensions/cli/package-lock.json"
         },
         {
-          "name": "opencircuit:bundle-path",
+          "name": "opencircuit:install-time",
+          "value": "true"
+        },
+        {
+          "name": "opencircuit:install-path",
           "value": "extensions/cli/node_modules/locate-path"
         }
       ]
@@ -8794,7 +8886,11 @@
           "value": "extensions/cli/package-lock.json"
         },
         {
-          "name": "opencircuit:bundle-path",
+          "name": "opencircuit:install-time",
+          "value": "true"
+        },
+        {
+          "name": "opencircuit:install-path",
           "value": "extensions/cli/node_modules/p-limit"
         }
       ]
@@ -8828,7 +8924,11 @@
           "value": "extensions/cli/package-lock.json"
         },
         {
-          "name": "opencircuit:bundle-path",
+          "name": "opencircuit:install-time",
+          "value": "true"
+        },
+        {
+          "name": "opencircuit:install-path",
           "value": "extensions/cli/node_modules/p-locate"
         }
       ]
@@ -9068,6 +9168,44 @@
         {
           "name": "opencircuit:bundle-path",
           "value": "extensions/cli/node_modules/path-to-regexp"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/picomatch@4.0.4",
+      "name": "picomatch",
+      "version": "4.0.4",
+      "purl": "pkg:npm/picomatch@4.0.4",
+      "licenses": [
+        {
+          "expression": "MIT"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "40ff3c0402af31a9bfdcdc47eaf8f6a36d51e8c8f165401dea7970012fe99c6bcdf4854ba1c2c7c46608cc5860e9f510fb9b61e8fe1dbf8796f635f70d2223ec"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/picomatch/-/picomatch-4.0.4.tgz"
+        }
+      ],
+      "properties": [
+        {
+          "name": "opencircuit:lockfile",
+          "value": "extensions/cli/package-lock.json"
+        },
+        {
+          "name": "opencircuit:install-time",
+          "value": "true"
+        },
+        {
+          "name": "opencircuit:install-path",
+          "value": "node_modules/picomatch"
         }
       ]
     },
@@ -11092,7 +11230,11 @@
           "value": "extensions/cli/package-lock.json"
         },
         {
-          "name": "opencircuit:bundle-path",
+          "name": "opencircuit:install-time",
+          "value": "true"
+        },
+        {
+          "name": "opencircuit:install-path",
           "value": "extensions/cli/node_modules/unicorn-magic"
         }
       ]
@@ -11996,7 +12138,11 @@
           "value": "extensions/cli/package-lock.json"
         },
         {
-          "name": "opencircuit:bundle-path",
+          "name": "opencircuit:install-time",
+          "value": "true"
+        },
+        {
+          "name": "opencircuit:install-path",
           "value": "extensions/cli/node_modules/yocto-queue"
         }
       ]
