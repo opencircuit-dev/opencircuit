@@ -2,7 +2,7 @@
 
 This repository contains installable CLI releases, not source code. To
 contribute, use the contributor documentation in the
-[source repository](https://github.com/open-circuit-dev/opencircuit-dev).
+[source repository](https://github.com/opencircuit-dev/opencircuit-dev).
 
 ## 1. Requirements
 
@@ -19,37 +19,42 @@ npm --version
 
 For the newest release, download the root-level bundle and checksum:
 
-- [`opencircuit-cli-1.0.3.tgz`](opencircuit-cli-1.0.3.tgz)
-- [`opencircuit-cli-1.0.3.tgz.sha256`](opencircuit-cli-1.0.3.tgz.sha256)
+- [`opencircuit-cli-1.0.4.tgz`](opencircuit-cli-1.0.4.tgz)
+- [`opencircuit-cli-1.0.4.tgz.sha256`](opencircuit-cli-1.0.4.tgz.sha256)
 
 <!-- LATEST_ARTIFACT_END -->
 
 Use only the artifacts linked above. A source repository may have a newer
 package version before its release archive is published here.
 
-The current archive is version **1.0.3**. It predates the latest source
-model-picker updates: regeneration failed the release dependency audit, so the
-downloadable archive has not been refreshed.
+The downloadable archive is **1.0.4**, including automatic model discovery.
+This exact build passed Server1 release/security validation and isolated
+runtime/model-picker qualification on Ubuntu1 and Workstation1. See the
+[qualification record and checksum](README.md#104-qualification).
+Tag/npm publication is not yet supported by the current distribution workflow.
 
 ## 3. Verify and install
 
 Run these commands in the directory containing the downloaded files:
 
 ```bash
-shasum -a 256 -c opencircuit-cli-1.0.3.tgz.sha256
-npm install --global ./opencircuit-cli-1.0.3.tgz
+shasum -a 256 -c opencircuit-cli-1.0.4.tgz.sha256
+npm install --global ./opencircuit-cli-1.0.4.tgz
 command -v oc
 oc --version
 ```
 
 The checksum must report `OK`. Keep the tarball and checksum from the same
-release; do not install if they do not match.
+release; do not install if they do not match. `oc --version` should report
+`1.0.4`. Existing provider configuration does not need to be replaced to upgrade.
 
 ## 4. Choose one provider
 
 The package installs starter templates under `~/.ocircuit/templates/` without
-overwriting existing files. Copy one template for the provider you intend to
-use:
+overwriting existing files. For first-time setup, copy one template for the
+provider you intend to use. If you already have provider configuration and
+credentials, keep them; do not overwrite them with the setup commands below
+just to upgrade.
 
 ```bash
 mkdir -p ~/.ocircuit
@@ -96,8 +101,17 @@ oc --config ~/.ocircuit/config.yaml
 ```
 
 In an interactive session, use `/model` to open the model picker. Use the arrow
-keys and Enter to select a configured chat model, or Esc to cancel. Use unique
-configured model names for reliable preference restoration after restarting.
+keys and Enter to select a chat model, or Esc to cancel.
+
+The 1.0.4 picker also discovers compatible chat models for the
+selected OpenAI, Anthropic, Gemini, or OpenAI-compatible provider profile.
+Entries are labeled configured or discovered, long lists scroll, and selections
+are saved for the matching provider profile across restarts. Endpoint settings
+and restrictions such as OLMo's disabled tools are preserved. If discovery
+fails, a warning is shown and configured models remain selectable.
+
+When upgrading from 1.0.3, the picker is no longer limited to models explicitly
+listed in YAML. Explicitly configured models remain available.
 
 ## Troubleshooting
 
@@ -116,7 +130,7 @@ checksum verification fails, download the matching archive and checksum again.
 Local terminal commands use a fixed non-login shell; shell profiles and parent
 `PATH` values are not inherited. Public URL retrieval tools accept only public
 HTTPS destinations on port 443. See the
-[security policy](https://github.com/open-circuit-dev/opencircuit-dev/blob/main/SECURITY.md).
+[security policy](https://github.com/opencircuit-dev/opencircuit-dev/blob/main/SECURITY.md).
 
 <!-- PACKAGED_CONFIGURATION_START -->
 

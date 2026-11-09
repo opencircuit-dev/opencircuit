@@ -2,14 +2,14 @@
   "schemaVersion": "open-circuit.provenance.v1",
   "product": "Open Circuit",
   "artifact": {
-    "name": "opencircuit-cli-1.0.3.tgz",
-    "version": "1.0.3",
-    "sha256": "08d8adfe3f5dbb08b35090dc393809a7de49357ff6f103ca41babd65721c2dc3",
-    "sizeBytes": 13861575
+    "name": "opencircuit-cli-1.0.4.tgz",
+    "version": "1.0.4",
+    "sha256": "b3bdd6ac1ee321e5a70c0935766154c49ef0c5197df1ac4c112e65f6157f0279",
+    "sizeBytes": 13876350
   },
   "source": {
     "repository": "https://github.com/opencircuit-dev/opencircuit-dev",
-    "commit": "893a7c9633e45a32f0112ed7c0951e89ebdb5c74",
+    "commit": "553654c7a46917ca3625c9b5e41990d09d1dd50f",
     "tag": null,
     "dirty": false
   },
@@ -21,14 +21,14 @@
     "architecture": "x64",
     "node": "v24.19.0",
     "npm": "11.17.0",
-    "lockfileSha256": "9b1c7448184a2d75b032a23203e5bebecee3822207a80bf328bafe8827ad2329",
+    "lockfileSha256": "11e152276e9b9e4e97b33c039227ecc4f594a73c54c84f2f5f27f89379906482",
     "sourceDateEpoch": null
   },
   "materials": [
     {
       "type": "npm-lockfile",
       "path": "extensions/cli/package-lock.json",
-      "sha256": "9b1c7448184a2d75b032a23203e5bebecee3822207a80bf328bafe8827ad2329"
+      "sha256": "11e152276e9b9e4e97b33c039227ecc4f594a73c54c84f2f5f27f89379906482"
     },
     {
       "type": "npm-lockfile",
@@ -43,14 +43,14 @@
     {
       "type": "esbuild-metafile",
       "path": "extensions/cli/dist/meta.json",
-      "sha256": "83d5e1a7c8e70e775b972307b0a6974f13c3f13c612c6f0b61ec216b7a38ee01"
+      "sha256": "c13926bfd4ffe5129259f4de3f86ec0a5fb847891cee05604ea4ac8a9997d865"
     }
   ],
   "verification": {
-    "sbom": "opencircuit-cli-1.0.3.sbom.cdx.json",
-    "sbomSha256": "dc426f93d5cb48d4d9addc15516bdfc2cd337aa4813beec5b160c31dd0558bb4",
-    "notices": "opencircuit-cli-1.0.3.NOTICES.txt",
-    "noticesSha256": "aed25dba61c681b2795c00ed3179d5de81d990c3fa032c015a2ec3ae6f7ebc48",
+    "sbom": "opencircuit-cli-1.0.4.sbom.cdx.json",
+    "sbomSha256": "b2fdf2756a9362b8fe604bc65f97e07725f94c78fa54e69b2159df4c89ff7ebf",
+    "notices": "opencircuit-cli-1.0.4.NOTICES.txt",
+    "noticesSha256": "fcb392dd39d689d5c66eda3127de949463fd6142e5468078251c0bc91b90bdc0",
     "signatureOrAttestation": null
   }
 }
