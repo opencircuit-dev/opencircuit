@@ -27,10 +27,11 @@ For the newest release, download the root-level bundle and checksum:
 Use only the artifacts linked above. A source repository may have a newer
 package version before its release archive is published here.
 
-The downloadable archive is **1.0.4**, including automatic model discovery.
-This exact build passed Server1 release/security validation and isolated
-runtime/model-picker qualification on Ubuntu1 and Workstation1. See the
-[qualification record and checksum](README.md#104-qualification).
+The downloadable archive is **1.0.5**, including automatic model discovery,
+bounded tool recovery, and file-edit safeguards. See the
+[verification record, scope, and checksum](README.md#105-verification).
+The earlier 1.0.4 runtime qualification must not be treated as a new
+Ubuntu1/Workstation1 or live-provider acceptance result for 1.0.5.
 Tag/npm publication is not yet supported by the current distribution workflow.
 
 ## 3. Verify and install
@@ -38,15 +39,15 @@ Tag/npm publication is not yet supported by the current distribution workflow.
 Run these commands in the directory containing the downloaded files:
 
 ```bash
-shasum -a 256 -c opencircuit-cli-1.0.4.tgz.sha256
-npm install --global ./opencircuit-cli-1.0.4.tgz
+shasum -a 256 -c opencircuit-cli-1.0.5.tgz.sha256
+npm install --global ./opencircuit-cli-1.0.5.tgz
 command -v oc
 oc --version
 ```
 
 The checksum must report `OK`. Keep the tarball and checksum from the same
 release; do not install if they do not match. `oc --version` should report
-`1.0.4`. Existing provider configuration does not need to be replaced to upgrade.
+`1.0.5`. Existing provider configuration does not need to be replaced to upgrade.
 
 ## 4. Choose one provider
 
@@ -103,7 +104,7 @@ oc --config ~/.ocircuit/config.yaml
 In an interactive session, use `/model` to open the model picker. Use the arrow
 keys and Enter to select a chat model, or Esc to cancel.
 
-The 1.0.4 picker also discovers compatible chat models for the
+The picker also discovers compatible chat models for the
 selected OpenAI, Anthropic, Gemini, or OpenAI-compatible provider profile.
 Entries are labeled configured or discovered, long lists scroll, and selections
 are saved for the matching provider profile across restarts. Endpoint settings
