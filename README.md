@@ -13,7 +13,7 @@ Start with the
 
 | Version | Artifact | Checksum |
 | ------- | -------- | -------- |
-| `v1.0.4` | [`opencircuit-cli-1.0.4.tgz`](opencircuit-cli-1.0.4.tgz) | [`opencircuit-cli-1.0.4.tgz.sha256`](opencircuit-cli-1.0.4.tgz.sha256) |
+| `v1.0.5` | [`opencircuit-cli-1.0.5.tgz`](opencircuit-cli-1.0.5.tgz) | [`opencircuit-cli-1.0.5.tgz.sha256`](opencircuit-cli-1.0.5.tgz.sha256) |
 
 <!-- VERSIONS_TABLE_END -->
 
@@ -21,8 +21,8 @@ The release pair is also linked at the repository root:
 
 <!-- LATEST_ARTIFACT_START -->
 
-- [`opencircuit-cli-1.0.4.tgz`](opencircuit-cli-1.0.4.tgz)
-- [`opencircuit-cli-1.0.4.tgz.sha256`](opencircuit-cli-1.0.4.tgz.sha256)
+- [`opencircuit-cli-1.0.5.tgz`](opencircuit-cli-1.0.5.tgz)
+- [`opencircuit-cli-1.0.5.tgz.sha256`](opencircuit-cli-1.0.5.tgz.sha256)
 
 <!-- LATEST_ARTIFACT_END -->
 
